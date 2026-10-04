@@ -1,0 +1,862 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Jugendschutzgesetz Arbeitsblatt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Layout: ein Blatt Papier, mittig, nummerierte Aufgabenblöcke in Videoreihenfolge */
+:root {
+  --paper: #ffffff;
+  --desk: #eef1ec;
+  --ink: #1d2420;
+  --muted: #5b665f;
+  --line: #9aa59e;
+  --accent: #2e7d32;
+  --accent-soft: #e6f2e6;
+  --field: #f6f8f5;
+  --chip: #fff7d6;
+  --chip-border: #d9c36a;
+  --focus: #1565c0;
+  --ok: #2e7d32; --ok-bg: #e3f3e3; --bad: #c62828; --bad-bg: #fde4e4;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1b211d; --desk: #111512; --ink: #e8eee9; --muted: #a3afa7; --line: #5d6a62;
+    --accent: #7fc983; --accent-soft: #23352548; --field: #232b25; --chip: #3a3418; --chip-border: #8f7d33; --focus: #82b6ff; --ok: #81c784; --ok-bg: #1f3a22; --bad: #ff8a80; --bad-bg: #4a1f1f; 
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1b211d; --desk: #111512; --ink: #e8eee9; --muted: #a3afa7; --line: #5d6a62;
+  --accent: #7fc983; --accent-soft: #23352548; --field: #232b25; --chip: #3a3418; --chip-border: #8f7d33; --focus: #82b6ff; --ok: #81c784; --ok-bg: #1f3a22; --bad: #ff8a80; --bad-bg: #4a1f1f; 
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--desk); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.6; }
+.wrap { max-width: 860px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 64px; }
+.sheet { background: var(--paper); border-radius: 6px; padding: clamp(18px, 4vw, 44px); box-shadow: 0 1px 3px rgb(0 0 0 / .08); }
+.meta { display: flex; flex-wrap: wrap; gap: 12px 20px; font-size: 15px; color: var(--muted); }
+.meta label { display: flex; align-items: baseline; gap: 8px; flex: 1 1 180px; }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 18px 0 14px; text-wrap: balance; }
+.brief { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 8px; }
+.video { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 12px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 6px; }
+.video a { color: var(--accent); font-weight: 700; word-break: break-all; }
+.qr { background: #fff; padding: 6px; border-radius: 4px; line-height: 0; }
+.brief a { color: var(--accent); font-weight: 700; }
+section { margin-top: 34px; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: 22px; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 4px; margin: 0 0 12px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; text-wrap: balance; }
+.time { font-family: var(--f-body); font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.task { font-weight: 700; margin: 18px 0 6px; }
+.hint { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+p { margin: 6px 0; }
+.fill { line-height: 2.4; }
+
+input.gap, input.line, input.small {
+  font: inherit; color: var(--ink); background: var(--field);
+  border: none; border-bottom: 2px solid var(--line); border-radius: 3px 3px 0 0;
+  padding: 0 6px; height: 1.8em;
+}
+input.gap { width: 9em; }
+input.gap.s { width: 3.5em; text-align: center; }
+input.gap.l { width: 13em; }
+input.line { display: block; width: 100%; margin: 8px 0; }
+input:focus-visible, .chip:focus-visible, .opt:focus-within, .drop:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+input.gap:focus, input.line:focus { border-bottom-color: var(--accent); }
+
+.opts { display: grid; gap: 6px; margin: 4px 0 0 4px; }
+.opt { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; padding: 4px 6px; border-radius: 4px; }
+.opt:hover { background: var(--field); }
+.opt input, td input[type=radio] { width: 22px; height: 22px; accent-color: var(--accent); flex: none; margin-top: 2px; cursor: pointer; }
+
+.tbl { overflow-x: auto; margin: 6px 0; }
+table { border-collapse: collapse; width: 100%; min-width: 440px; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: middle; text-align: left; }
+th { background: var(--accent-soft); font-size: 15px; }
+td.c, th.c { text-align: center; width: 70px; }
+td input.gap { width: 100%; max-width: 12em; }
+td input.line { margin: 0; }
+
+.bank { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; border: 2px dashed var(--line); border-radius: 6px; min-height: 58px; }
+.chip { background: var(--chip); border: 1px solid var(--chip-border); color: var(--ink); border-radius: 999px; padding: 4px 14px; font: inherit; font-weight: 700; cursor: grab; touch-action: none; user-select: none; }
+.chip.sel { outline: 3px solid var(--focus); }
+.chip.dragging { opacity: .35; }
+.ghost { position: fixed; pointer-events: none; z-index: 10; cursor: grabbing; box-shadow: 0 4px 12px rgb(0 0 0 / .25); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.drop { border: 2px solid var(--line); border-radius: 6px; min-height: 210px; padding: 10px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.drop h3 { margin: 0 0 4px; font-size: 15px; width: 100%; text-align: center; background: var(--accent-soft); border-radius: 4px; padding: 4px; }
+.drop.over, .bank.over { border-color: var(--accent); background: var(--accent-soft); }
+.tip { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+.bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+button.reset { font: inherit; font-weight: 700; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+button.reset.warn { background: #b3261e; border-color: #b3261e; color: #fff; }
+
+/* Überprüfen */
+.checkrow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 16px; }
+button.check { font: inherit; font-weight: 700; background: var(--accent); color: var(--paper); border: none; border-radius: 4px; padding: 7px 16px; cursor: pointer; }
+.result { font-size: 15px; font-weight: 700; }
+.result.allok { color: var(--ok); } .result.some { color: var(--bad); }
+input.gap.ok, input.line.ok { border-bottom-color: var(--ok); background: var(--ok-bg); }
+input.gap.bad, input.line.bad { border-bottom-color: var(--bad); background: var(--bad-bg); }
+.opt.ok, td.ok { background: var(--ok-bg); border-color: var(--ok); }
+.opt.bad, td.bad { background: var(--bad-bg); border-color: var(--bad); }
+.opt { border: 2px solid transparent; }
+[hidden] { display: none !important; }
+.chip.ok { background: var(--ok-bg); border-color: var(--ok); }
+.chip.bad { background: var(--bad-bg); border-color: var(--bad); }
+.chip.ok::after { content: " ✓"; color: var(--ok); } .chip.bad::after { content: " ✗"; color: var(--bad); }
+@media (max-width: 520px) { .cols { grid-template-columns: 1fr; } .drop { min-height: 120px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------- Kopfleiste: Fortschritt, Punkte, Vorlesen ---------- */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; align-items: center; gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; box-shadow: 0 2px 8px rgb(0 0 0 / .08); }
+.prog { flex: 1; min-width: 0; }
+.progtxt { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; font-size: 14px; font-weight: 700; }
+.pts { color: var(--accent); font-variant-numeric: tabular-nums; }
+.track { height: 12px; background: var(--field); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; margin-top: 5px; }
+.track .barfill { height: 100%; width: 0; background: var(--accent); border-radius: 999px; transition: width .5s ease; }
+.iconbtn { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--line); background: var(--paper); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.iconbtn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.iconbtn svg { width: 24px; height: 24px; }
+.certlink { flex: none; font: inherit; font-size: 14px; font-weight: 700; border: none; border-radius: 4px; padding: 8px 12px; background: var(--chip); border: 1px solid var(--chip-border); color: var(--ink); cursor: pointer; }
+
+/* ---------- Vorlesen ---------- */
+.say { display: none; vertical-align: middle; width: 30px; height: 30px; margin-right: 6px; border-radius: 50%; border: 1px solid var(--line); background: var(--field); color: var(--accent); cursor: pointer; padding: 0; flex: none; }
+.say svg { width: 17px; height: 17px; display: block; margin: auto; }
+body.say-on .say { display: inline-grid; place-items: center; }
+.say.speaking { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+h2 .say { margin-top: 2px; }
+
+/* ---------- Tipps und Wortspeicher ---------- */
+.tipbtn { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--chip-border); background: var(--chip); color: var(--ink); cursor: pointer; padding: 0; vertical-align: middle; margin-left: 3px; font-weight: 700; font-size: 14px; line-height: 1; }
+.bubble { display: inline-block; background: var(--chip); border: 1px solid var(--chip-border); border-radius: 6px; padding: 2px 10px; margin: 0 4px; font-size: 15px; line-height: 1.5; }
+.toolrow { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 8px; }
+.wbtn { font: inherit; font-size: 14px; font-weight: 700; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 3px 12px; cursor: pointer; }
+.wbtn[aria-expanded="true"] { background: var(--accent-soft); }
+.wbank { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px 12px; border: 1px dashed var(--accent); border-radius: 6px; margin-bottom: 8px; }
+.wbank .wlabel { font-size: 14px; color: var(--muted); width: 100%; }
+.word { font: inherit; font-size: 15px; background: var(--paper); border: 1px solid var(--line); color: var(--ink); border-radius: 4px; padding: 2px 10px; cursor: pointer; }
+.word:hover { border-color: var(--accent); }
+
+/* ---------- Alters-Regler ---------- */
+.extra { background: var(--accent-soft); border-radius: 8px; padding: 16px clamp(12px, 3vw, 20px); }
+.age-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 10px 0; }
+.age-ctl input[type=range] { flex: 1 1 220px; accent-color: var(--accent); height: 32px; }
+.age-out { font-family: var(--f-display); font-weight: 800; font-size: 30px; min-width: 4.5em; font-variant-numeric: tabular-nums; }
+.age-head { font-weight: 700; margin: 4px 0 10px; }
+.agelist { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.agelist li { display: flex; gap: 10px; align-items: flex-start; background: var(--paper); border-radius: 6px; padding: 8px 10px; border-left: 5px solid var(--line); }
+.agelist li.ok { border-left-color: var(--ok); } .agelist li.no { border-left-color: var(--bad); } .agelist li.lim { border-left-color: var(--chip-border); }
+.agelist .st { flex: none; font-weight: 800; width: 1.3em; text-align: center; }
+.agelist li.ok .st { color: var(--ok); } .agelist li.no .st { color: var(--bad); } .agelist li.lim .st { color: var(--chip-border); }
+.agelist b { display: block; }
+
+/* ---------- Szenario ---------- */
+.story { background: var(--field); border-radius: 8px; padding: 14px 16px; }
+.steps { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 12px; }
+.steps span { width: 30px; height: 8px; border-radius: 4px; background: var(--line); }
+.steps span.done { background: var(--ok); } .steps span.cur { background: var(--accent); outline: 2px solid var(--accent); outline-offset: 1px; }
+.clock { font-weight: 800; font-size: 14px; color: var(--accent); letter-spacing: .05em; font-variant-numeric: tabular-nums; }
+.scene-text { font-size: 18px; margin: 4px 0 12px; }
+.choices { display: grid; gap: 8px; }
+.choice { display: flex; align-items: center; text-align: left; font: inherit; background: var(--paper); color: var(--ink); border: 2px solid var(--line); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+.choice:hover:not(:disabled) { border-color: var(--accent); }
+.choice.right { border-color: var(--ok); background: var(--ok-bg); }
+.choice.wrong { border-color: var(--bad); background: var(--bad-bg); cursor: default; }
+.choice:disabled { cursor: default; }
+.feedback { margin-top: 10px; padding: 10px 14px; border-radius: 6px; font-weight: 700; }
+.feedback.good { background: var(--ok-bg); color: var(--ok); } .feedback.badfb { background: var(--bad-bg); color: var(--bad); }
+.feedback span.fbt { color: var(--ink); font-weight: 400; }
+.next { margin-top: 12px; }
+
+/* ---------- Urkunde ---------- */
+.cert { margin-top: 40px; text-align: center; background: #fffdf5; color: #2a2414; border: 10px double #b8952e; border-radius: 6px; padding: clamp(20px, 5vw, 44px); }
+.cert .seal { width: 90px; height: 90px; margin: 0 auto 8px; }
+.cert .ctitle { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 6vw, 46px); letter-spacing: .06em; text-transform: uppercase; color: #7a5c0e; margin: 0; }
+.cert .csub { font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 4vw, 28px); color: #2e7d32; margin: 4px 0 18px; }
+.cert .cname { font-family: var(--f-display); font-weight: 800; font-size: clamp(24px, 5vw, 36px); border-bottom: 2px solid #b8952e; display: inline-block; padding: 0 20px 4px; margin: 8px 0 14px; min-width: 60%; }
+.cert .stars { font-size: 34px; color: #d4a017; letter-spacing: 6px; }
+.cert .cfoot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 26px; font-size: 14px; }
+.cert .cfoot div { border-top: 1px solid #2a2414; padding-top: 4px; min-width: 160px; }
+.lockinfo { margin-top: 40px; text-align: center; border: 2px dashed var(--line); border-radius: 8px; padding: 20px; color: var(--muted); }
+
+/* ---------- PDF ---------- */
+.pdfbox { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px; border-radius: 8px; background: var(--field); }
+button.pdf { font: inherit; font-weight: 700; background: var(--accent); color: var(--paper); border: none; border-radius: 4px; padding: 10px 18px; cursor: pointer; }
+button.pdf:disabled { opacity: .6; cursor: progress; }
+html.pdf-mode .topbar, html.pdf-mode .say, html.pdf-mode .tipbtn, html.pdf-mode .toolrow, html.pdf-mode .wbank, html.pdf-mode .checkrow button, html.pdf-mode .bar, html.pdf-mode .pdfbox, html.pdf-mode .tip, html.pdf-mode .bubble, html.pdf-mode .next, html.pdf-mode #scAgain { display: none !important; }
+</style>
+
+<div class="wrap">
+<div class="topbar">
+  <div class="prog">
+    <div class="progtxt"><span id="progLabel">0 von 8 Aufgaben geschafft</span><span class="pts" id="pts"></span></div>
+    <div class="track" role="presentation"><div class="barfill" id="bar"></div></div>
+  </div>
+  <button type="button" class="certlink" id="certJump" hidden>Zur Urkunde</button>
+  <button type="button" class="iconbtn" id="sayToggle" aria-pressed="false" aria-label="Vorlese-Knöpfe ein- oder ausblenden" title="Vorlese-Knöpfe einblenden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+</div>
+<main class="sheet" id="sheet">
+  <div class="meta">
+    <label>Name: <input class="line" id="name" style="display:inline-block;margin:0" autocomplete="off"></label>
+    <label style="flex:0 1 150px">Klasse: <input class="gap s" id="klasse" value="7"></label>
+    <label style="flex:0 1 200px">Datum: <input class="gap" id="datum"></label>
+  </div>
+  <h1>Das Jugendschutzgesetz</h1>
+  <div class="brief"><b>Arbeitsauftrag:</b> Schau dir das Video „Das Jugendschutzgesetz“ aufmerksam an. Die Aufgaben 1 bis 6 kommen in derselben Reihenfolge wie im Video. Die Zeitangaben zeigen dir, wo du gerade bist. Aufgabe 7 löst du nach dem Video mit deinem Banknachbarn. Prüfe jede Aufgabe mit dem grünen Knopf. Für jede Antwort, die beim ersten Prüfen stimmt, bekommst du einen Punkt. Wenn du alle 8 Aufgaben geschafft hast, bekommst du deine Urkunde.</div>
+
+  <div class="video">
+    <div><b>Hier geht es zum Video:</b><br><a href="https://youtu.be/W3ptanwe8fc" target="_blank" rel="noopener">https://youtu.be/W3ptanwe8fc</a><br><span class="hint">Oder scanne den QR-Code mit dem Tablet oder Handy.</span></div>
+    <div class="qr"><svg width="112" height="112" role="img" aria-label="QR-Code zum Video" version="1.1" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM11,2H12V3H11zM12,2H13V3H12zM14,2H15V3H14zM15,2H16V3H15zM18,2H19V3H18zM19,2H20V3H19zM20,2H21V3H20zM21,2H22V3H21zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM27,2H28V3H27zM28,2H29V3H28zM29,2H30V3H29zM30,2H31V3H30zM2,3H3V4H2zM8,3H9V4H8zM10,3H11V4H10zM11,3H12V4H11zM16,3H17V4H16zM17,3H18V4H17zM18,3H19V4H18zM20,3H21V4H20zM21,3H22V4H21zM22,3H23V4H22zM24,3H25V4H24zM30,3H31V4H30zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM11,4H12V5H11zM12,4H13V5H12zM15,4H16V5H15zM16,4H17V5H16zM18,4H19V5H18zM20,4H21V5H20zM22,4H23V5H22zM24,4H25V5H24zM26,4H27V5H26zM27,4H28V5H27zM28,4H29V5H28zM30,4H31V5H30zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM14,5H15V6H14zM15,5H16V6H15zM16,5H17V6H16zM17,5H18V6H17zM20,5H21V6H20zM21,5H22V6H21zM24,5H25V6H24zM26,5H27V6H26zM27,5H28V6H27zM28,5H29V6H28zM30,5H31V6H30zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM11,6H12V7H11zM12,6H13V7H12zM16,6H17V7H16zM21,6H22V7H21zM24,6H25V7H24zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM30,6H31V7H30zM2,7H3V8H2zM8,7H9V8H8zM11,7H12V8H11zM12,7H13V8H12zM13,7H14V8H13zM15,7H16V8H15zM20,7H21V8H20zM21,7H22V8H21zM24,7H25V8H24zM30,7H31V8H30zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM22,8H23V9H22zM24,8H25V9H24zM25,8H26V9H25zM26,8H27V9H26zM27,8H28V9H27zM28,8H29V9H28zM29,8H30V9H29zM30,8H31V9H30zM11,9H12V10H11zM13,9H14V10H13zM14,9H15V10H14zM15,9H16V10H15zM16,9H17V10H16zM18,9H19V10H18zM19,9H20V10H19zM20,9H21V10H20zM21,9H22V10H21zM22,9H23V10H22zM2,10H3V11H2zM4,10H5V11H4zM6,10H7V11H6zM8,10H9V11H8zM14,10H15V11H14zM16,10H17V11H16zM17,10H18V11H17zM19,10H20V11H19zM26,10H27V11H26zM29,10H30V11H29zM3,11H4V12H3zM5,11H6V12H5zM6,11H7V12H6zM7,11H8V12H7zM9,11H10V12H9zM10,11H11V12H10zM12,11H13V12H12zM13,11H14V12H13zM16,11H17V12H16zM17,11H18V12H17zM19,11H20V12H19zM22,11H23V12H22zM24,11H25V12H24zM27,11H28V12H27zM30,11H31V12H30zM2,12H3V13H2zM7,12H8V13H7zM8,12H9V13H8zM10,12H11V13H10zM11,12H12V13H11zM13,12H14V13H13zM14,12H15V13H14zM15,12H16V13H15zM22,12H23V13H22zM23,12H24V13H23zM24,12H25V13H24zM26,12H27V13H26zM28,12H29V13H28zM29,12H30V13H29zM30,12H31V13H30zM7,13H8V14H7zM9,13H10V14H9zM10,13H11V14H10zM11,13H12V14H11zM17,13H18V14H17zM19,13H20V14H19zM20,13H21V14H20zM21,13H22V14H21zM29,13H30V14H29zM2,14H3V15H2zM3,14H4V15H3zM4,14H5V15H4zM5,14H6V15H5zM7,14H8V15H7zM8,14H9V15H8zM12,14H13V15H12zM13,14H14V15H13zM18,14H19V15H18zM19,14H20V15H19zM20,14H21V15H20zM24,14H25V15H24zM25,14H26V15H25zM27,14H28V15H27zM29,14H30V15H29zM30,14H31V15H30zM4,15H5V16H4zM6,15H7V16H6zM14,15H15V16H14zM15,15H16V16H15zM17,15H18V16H17zM18,15H19V16H18zM20,15H21V16H20zM22,15H23V16H22zM23,15H24V16H23zM24,15H25V16H24zM27,15H28V16H27zM30,15H31V16H30zM2,16H3V17H2zM5,16H6V17H5zM7,16H8V17H7zM8,16H9V17H8zM9,16H10V17H9zM10,16H11V17H10zM11,16H12V17H11zM16,16H17V17H16zM17,16H18V17H17zM18,16H19V17H18zM20,16H21V17H20zM23,16H24V17H23zM25,16H26V17H25zM26,16H27V17H26zM27,16H28V17H27zM29,16H30V17H29zM30,16H31V17H30zM2,17H3V18H2zM3,17H4V18H3zM5,17H6V18H5zM6,17H7V18H6zM9,17H10V18H9zM10,17H11V18H10zM11,17H12V18H11zM12,17H13V18H12zM15,17H16V18H15zM16,17H17V18H16zM18,17H19V18H18zM19,17H20V18H19zM23,17H24V18H23zM24,17H25V18H24zM27,17H28V18H27zM29,17H30V18H29zM2,18H3V19H2zM3,18H4V19H3zM4,18H5V19H4zM6,18H7V19H6zM8,18H9V19H8zM9,18H10V19H9zM10,18H11V19H10zM12,18H13V19H12zM13,18H14V19H13zM14,18H15V19H14zM16,18H17V19H16zM17,18H18V19H17zM19,18H20V19H19zM23,18H24V19H23zM24,18H25V19H24zM25,18H26V19H25zM27,18H28V19H27zM29,18H30V19H29zM30,18H31V19H30zM4,19H5V20H4zM5,19H6V20H5zM6,19H7V20H6zM11,19H12V20H11zM12,19H13V20H12zM16,19H17V20H16zM17,19H18V20H17zM19,19H20V20H19zM23,19H24V20H23zM24,19H25V20H24zM27,19H28V20H27zM28,19H29V20H28zM30,19H31V20H30zM2,20H3V21H2zM8,20H9V21H8zM10,20H11V21H10zM12,20H13V21H12zM14,20H15V21H14zM15,20H16V21H15zM19,20H20V21H19zM24,20H25V21H24zM25,20H26V21H25zM29,20H30V21H29zM30,20H31V21H30zM3,21H4V22H3zM6,21H7V22H6zM9,21H10V22H9zM10,21H11V22H10zM12,21H13V22H12zM17,21H18V22H17zM19,21H20V22H19zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM26,21H27V22H26zM27,21H28V22H27zM29,21H30V22H29zM2,22H3V23H2zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM7,22H8V23H7zM8,22H9V23H8zM10,22H11V23H10zM14,22H15V23H14zM18,22H19V23H18zM19,22H20V23H19zM22,22H23V23H22zM23,22H24V23H23zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM10,23H11V24H10zM11,23H12V24H11zM12,23H13V24H12zM14,23H15V24H14zM15,23H16V24H15zM17,23H18V24H17zM18,23H19V24H18zM19,23H20V24H19zM22,23H23V24H22zM26,23H27V24H26zM28,23H29V24H28zM29,23H30V24H29zM30,23H31V24H30zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM7,24H8V25H7zM8,24H9V25H8zM11,24H12V25H11zM16,24H17V25H16zM17,24H18V25H17zM18,24H19V25H18zM19,24H20V25H19zM20,24H21V25H20zM22,24H23V25H22zM24,24H25V25H24zM26,24H27V25H26zM27,24H28V25H27zM29,24H30V25H29zM30,24H31V25H30zM2,25H3V26H2zM8,25H9V26H8zM11,25H12V26H11zM13,25H14V26H13zM15,25H16V26H15zM16,25H17V26H16zM18,25H19V26H18zM19,25H20V26H19zM20,25H21V26H20zM22,25H23V26H22zM26,25H27V26H26zM27,25H28V26H27zM29,25H30V26H29zM2,26H3V27H2zM4,26H5V27H4zM5,26H6V27H5zM6,26H7V27H6zM8,26H9V27H8zM10,26H11V27H10zM12,26H13V27H12zM13,26H14V27H13zM16,26H17V27H16zM17,26H18V27H17zM20,26H21V27H20zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM29,26H30V27H29zM2,27H3V28H2zM4,27H5V28H4zM5,27H6V28H5zM6,27H7V28H6zM8,27H9V28H8zM11,27H12V28H11zM13,27H14V28H13zM15,27H16V28H15zM16,27H17V28H16zM17,27H18V28H17zM22,27H23V28H22zM25,27H26V28H25zM26,27H27V28H26zM28,27H29V28H28zM2,28H3V29H2zM4,28H5V29H4zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM10,28H11V29H10zM14,28H15V29H14zM15,28H16V29H15zM19,28H20V29H19zM21,28H22V29H21zM25,28H26V29H25zM26,28H27V29H26zM27,28H28V29H27zM30,28H31V29H30zM2,29H3V30H2zM8,29H9V30H8zM12,29H13V30H12zM14,29H15V30H14zM16,29H17V30H16zM17,29H18V30H17zM21,29H22V30H21zM22,29H23V30H22zM29,29H30V30H29zM2,30H3V31H2zM3,30H4V31H3zM4,30H5V31H4zM5,30H6V31H5zM6,30H7V31H6zM7,30H8V31H7zM8,30H9V31H8zM10,30H11V31H10zM12,30H13V31H12zM14,30H15V31H14zM18,30H19V31H18zM22,30H23V31H22zM23,30H24V31H23zM24,30H25V31H24zM27,30H28V31H27zM29,30H30V31H29zM30,30H31V31H30z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg></div>
+  </div>
+
+  <section data-part="1">
+    <h2>1. Warum gibt es das Jugendschutzgesetz? <span class="time">▶ AB 00:30</span></h2>
+    <p class="task">a) Kreuze an: Das Jugendschutzgesetz (kurz JuSchG) ist …</p>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="a1a" id="a1a1" value="1"> ein Spielverderber, der Jugendlichen den Spaß verbieten will.</label>
+      <label class="opt"><input type="radio" name="a1a" id="a1a2" value="2"> ein Schutz vor Gefahren, deren Risiken junge Menschen noch nicht gut einschätzen können.</label>
+    </div>
+    <p class="task">b) Ergänze den Vergleich aus dem Video:</p>
+    <p class="fill">Das Gesetz ist keine <input class="gap" id="a1b1" aria-label="Lücke 1">, sondern wie eine <input class="gap" id="a1b2" aria-label="Lücke 2"> an der Autobahn. Sie gibt euch einen sicheren <input class="gap" id="a1b3" aria-label="Lücke 3">.</p>
+    <p class="task">c) Erkläre den Vergleich in eigenen Worten:</p>
+    <input class="line" id="a1c1" aria-label="Zeile 1"><input class="line" id="a1c2" aria-label="Zeile 2">
+  </section>
+
+  <section data-part="2">
+    <h2>2. Die drei Altersstufen <span class="time">▶ AB 01:25</span></h2>
+    <p class="hint">Das Gesetz unterscheidet nach dem Alter. Trage die Zahlen ein.</p>
+    <div class="tbl"><table>
+      <tr><th>Stufe</th><th>Alter</th></tr>
+      <tr><td><b>Kind</b></td><td>bis man <input class="gap s" id="a2a" inputmode="numeric" aria-label="Alter Kind"> wird</td></tr>
+      <tr><td><b>Jugendliche / Jugendlicher</b></td><td>von <input class="gap s" id="a2b" inputmode="numeric" aria-label="von"> bis <input class="gap s" id="a2c" inputmode="numeric" aria-label="bis"> Jahre</td></tr>
+      <tr><td><b>Volljährig (erwachsen)</b></td><td>ab <input class="gap s" id="a2d" inputmode="numeric" aria-label="volljährig ab"> Jahren</td></tr>
+    </table></div>
+    <p class="fill"><b>Und du?</b> Ich bin <input class="gap s" id="a2e" inputmode="numeric" aria-label="dein Alter"> Jahre alt. Also bin ich <input class="gap l" id="a2f" aria-label="Stufe">.</p>
+  </section>
+
+  <section data-part="3">
+    <h2>3. Ausgehen: Wie lange darf ich abends raus? <span class="time">▶ AB 01:55</span></h2>
+    <p class="task">a) Unter 16 Jahren – kreuze an, was ohne Begleitung erlaubt ist:</p>
+    <div class="opts">
+      <label class="opt"><input type="checkbox" id="a3a1"> allein in die Disco gehen</label>
+      <label class="opt"><input type="checkbox" id="a3a2"> kurz allein ins Restaurant gehen, um etwas zu essen oder zu trinken</label>
+    </div>
+    <p class="task">b) Mit 16 und 17 Jahren – ergänze:</p>
+    <p class="fill">Ihr dürft allein los. Aber die „magische Grenze“ ist <input class="gap" id="a3b1" aria-label="Grenze">. Um <input class="gap s" id="a3b2" inputmode="numeric" aria-label="Uhrzeit"> Uhr ist Feierabend.</p>
+    <p class="task">c) Der „Muttizettel“ – ergänze:</p>
+    <p class="fill">Die Zeitgrenzen gelten nicht, wenn die <input class="gap" id="a3c1" aria-label="Lücke 1"> oder eine von ihnen beauftragte <input class="gap" id="a3c2" aria-label="Lücke 2"> Person dabei ist. Dann darf z.&nbsp;B. ein 16-Jähriger auch nach <input class="gap" id="a3c3" aria-label="Lücke 3"> in der Disco bleiben.</p>
+    <p class="task">d) Absolut tabu! Nenne zwei Orte, an denen Minderjährige nichts zu suchen haben – egal mit wem:</p>
+    <p class="fill">1. <input class="gap l" id="a3d1" aria-label="Ort 1"><br>2. <input class="gap l" id="a3d2" aria-label="Ort 2"></p>
+  </section>
+
+  <section data-part="4">
+    <h2>4. Filme und Spiele: die bunten Siegel <span class="time">▶ AB 03:00</span></h2>
+    <p class="task">a) Ergänze:</p>
+    <p class="fill">FSK steht für F<input class="gap" id="a4a1" aria-label="F…"> S<input class="gap" id="a4a2" aria-label="S…"> der Filmwirtschaft. Sie prüft, ab welchem <input class="gap" id="a4a3" aria-label="Lücke"> Filme und Spiele unbedenklich sind.</p>
+    <p class="task">b) Richtig oder falsch? Kreuze an.</p>
+    <div class="tbl"><table>
+      <tr><th>Aussage</th><th class="c">richtig</th><th class="c">falsch</th></tr>
+      <tr><td>Die Altersfreigaben sind nur nette Empfehlungen.</td><td class="c"><input type="radio" name="a4b1" id="a4b1r" aria-label="richtig"></td><td class="c"><input type="radio" name="a4b1" id="a4b1f" aria-label="falsch"></td></tr>
+      <tr><td>Ein Laden darf einem 14-Jährigen kein Spiel ab 16 verkaufen.</td><td class="c"><input type="radio" name="a4b2" id="a4b2r" aria-label="richtig"></td><td class="c"><input type="radio" name="a4b2" id="a4b2f" aria-label="falsch"></td></tr>
+      <tr><td>Im Kino kann der Ausweis kontrolliert werden.</td><td class="c"><input type="radio" name="a4b3" id="a4b3r" aria-label="richtig"></td><td class="c"><input type="radio" name="a4b3" id="a4b3f" aria-label="falsch"></td></tr>
+      <tr><td>Für Verkäufer und Kinos ist die Einhaltung freiwillig.</td><td class="c"><input type="radio" name="a4b4" id="a4b4r" aria-label="richtig"></td><td class="c"><input type="radio" name="a4b4" id="a4b4f" aria-label="falsch"></td></tr>
+    </table></div>
+    <p class="task">c) Warum gibt es die Altersfreigaben?</p>
+    <p>Sie sollen euch vor Inhalten schützen, die …</p>
+    <input class="line" id="a4c" aria-label="Antwort">
+  </section>
+
+  <section data-part="5">
+    <h2>5. Alkohol und Rauchen: ab 16 oder ab 18? <span class="time">▶ AB 04:15</span></h2>
+    <p class="task">a) Ziehe die Begriffe in die richtige Spalte:</p>
+    <div class="bank" id="bank" data-zone="bank" tabindex="-1" aria-label="Begriffe"></div>
+    <p class="tip">Ziehen geht mit Maus oder Finger. Du kannst auch einen Begriff antippen und dann die Spalte antippen.</p>
+    <div class="cols">
+      <div class="drop" id="z16" data-zone="z16" tabindex="0" role="group" aria-label="erlaubt ab 16"><h3>erlaubt ab 16</h3></div>
+      <div class="drop" id="z18" data-zone="z18" tabindex="0" role="group" aria-label="erlaubt erst ab 18"><h3>erlaubt erst ab 18</h3></div>
+    </div>
+    <p class="task">b) Ergänze:</p>
+    <p class="fill">Beim Rauchen gilt: Kauf und <input class="gap" id="a5b1" aria-label="Lücke 1"> sind erst ab <input class="gap s" id="a5b2" inputmode="numeric" aria-label="Alter"> Jahren erlaubt. Es gibt <input class="gap" id="a5b3" aria-label="Lücke 3"> Ausnahmen.</p>
+    <p class="task">c) Kreuze an: Ein Erwachsener gibt einem 16-Jährigen auf einer Party einen Wodka aus. Ist das erlaubt?</p>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="a5c" id="a5c1"> ja, er hat ihn ja nicht verkauft</label>
+      <label class="opt"><input type="radio" name="a5c" id="a5c2"> nein, hochprozentigen Alkohol darf niemand an unter 18-Jährige abgeben</label>
+    </div>
+  </section>
+
+  <section data-part="6">
+    <h2>6. Der erste Job <span class="time">▶ AB 05:05</span></h2>
+    <p class="task">Ergänze:</p>
+    <p class="fill">Ab <input class="gap s" id="a6a" inputmode="numeric" aria-label="Alter"> Jahren dürft ihr mit Erlaubnis eurer <input class="gap" id="a6b" aria-label="Lücke"> leichte Jobs annehmen, zum Beispiel <input class="gap" id="a6c" aria-label="Beispiel 1"> oder <input class="gap l" id="a6d" aria-label="Beispiel 2">.</p>
+    <p class="fill">Aber: höchstens <input class="gap s" id="a6e" inputmode="numeric" aria-label="Stunden"> Stunden am Tag und nicht während der <input class="gap" id="a6f" aria-label="Lücke">.</p>
+    <p class="fill">Ferienjobs sind ab <input class="gap s" id="a6g" inputmode="numeric" aria-label="Alter"> Jahren möglich. Auch dann darf die <input class="gap" id="a6h" aria-label="Lücke"> nicht zu kurz kommen.</p>
+  </section>
+
+  <section data-part="7">
+    <h2>7. Nach dem Video: Was gilt hier?</h2>
+    <p class="hint">Lies die Fälle mit deinem Banknachbarn. Entscheidet, ob das erlaubt ist, und begründet kurz.</p>
+    <div class="tbl"><table id="faelle">
+      <tr><th>Fall</th><th class="c">ja</th><th class="c">nein</th><th>Begründung</th></tr>
+    </table></div>
+    <p class="task">Zum Nachdenken: Am Ende fragt das Video: Wie kannst du dieses Wissen nutzen, um kluge und sichere Entscheidungen zu treffen? Schreibe zwei Sätze.</p>
+    <input class="line" id="a7n1" aria-label="Satz 1"><input class="line" id="a7n2" aria-label="Satz 2"><input class="line" id="a7n3" aria-label="Satz 3">
+  </section>
+
+  <section class="extra" id="ageSec">
+    <h2>Extra: Was darf ich mit … Jahren?</h2>
+    <p class="hint">Stell ein Alter ein. Die Liste zeigt dir, was das Jugendschutzgesetz erlaubt. Probier ruhig verschiedene Alter aus.</p>
+    <div class="age-ctl">
+      <label for="age"><b>Alter:</b></label>
+      <input type="range" id="age" min="10" max="18" step="1" value="13" aria-describedby="ageOut">
+      <output id="ageOut" class="age-out">13 Jahre</output>
+    </div>
+    <p class="age-head" id="ageHead"></p>
+    <ul class="agelist" id="ageList"></ul>
+    <p class="hint" style="margin-top:10px">Denk dran: Deine Eltern müssen nicht alles erlauben, was das Gesetz erlaubt.</p>
+  </section>
+
+  <section data-part="8" id="scenario">
+    <h2>8. Samstagabend – du entscheidest!</h2>
+    <p class="hint">Du bist 15 Jahre alt. Triff an jeder Stelle eine Entscheidung. Einen Punkt bekommst du, wenn du gleich beim ersten Mal richtig liegst.</p>
+    <div class="story" id="story"></div>
+  </section>
+
+  <div id="certWrap">
+    <div class="lockinfo" id="certLock"><b>Deine Urkunde „Jugendschutz-Profi“</b><br>Löse alle 8 Aufgaben vollständig richtig, dann erscheint hier deine Urkunde.</div>
+    <div class="cert" id="cert" hidden>
+      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true"><g fill="#d4a017"><circle cx="50" cy="50" r="40"/></g><g fill="#b8952e"><path d="M50 4l6 10 11-4 2 11 11 2-4 11 10 6-10 6 4 11-11 2-2 11-11-4-6 10-6-10-11 4-2-11-11-2 4-11-10-6 10-6-4-11 11-2 2-11 11 4z" opacity=".55"/></g><circle cx="50" cy="50" r="30" fill="#fffdf5" stroke="#b8952e" stroke-width="3"/><path d="M36 51l9 9 19-20" fill="none" stroke="#2e7d32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p class="ctitle">Urkunde</p>
+      <p class="csub">Jugendschutz-Profi</p>
+      <p>Diese Urkunde erhält</p>
+      <div class="cname" id="certName"></div>
+      <p id="certText"></p>
+      <div class="stars" id="certStars" aria-label="Sterne"></div>
+      <div class="cfoot"><div>Datum: <span id="certDate"></span></div><div>Unterschrift Lehrkraft</div></div>
+    </div>
+  </div>
+
+  <div class="pdfbox">
+    <button type="button" class="pdf" id="pdfBtn">Als PDF speichern</button>
+    <span class="hint" id="pdfStatus" style="margin:0">Speichert die ausgefüllte Seite mit deinen Antworten und, wenn freigeschaltet, deiner Urkunde.</span>
+  </div>
+
+  <div class="bar">
+    <span id="status">Deine Eingaben werden in diesem Browser gespeichert.</span>
+    <button class="reset" id="reset" type="button">Alles löschen</button>
+  </div>
+</main></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function () {
+  const KEY = 'juschg-ab-v2';
+  const $ = (id) => document.getElementById(id);
+  const sheet = $('sheet');
+  const WORDS = ['Bier', 'Schnaps', 'Zigaretten', 'Wein', 'Wodka', 'E-Zigaretten', 'Sekt', 'Shisha'];
+  const FAELLE = [
+    'Lena (15) geht um 22 Uhr allein in die Disco.',
+    'Murat (14) holt sich nach dem Training allein etwas zu essen im Restaurant.',
+    'Jonas (16) bleibt bis 1 Uhr in der Disco. Sein 20-jähriger Cousin ist dabei und hat einen „Muttizettel“.',
+    'Tim (16) bestellt um 23 Uhr in der Disco ein Bier.',
+    'Sara (17) kauft am Kiosk eine E-Zigarette.',
+    'Der Verkäufer will Ali (14) kein Spiel „ab 16“ verkaufen. Darf er das ablehnen?',
+    'Mia (13) trägt mit Erlaubnis ihrer Eltern jeden Tag 3 Stunden Zeitungen aus.'
+  ];
+
+  // ---------- Zustand ----------
+  let st = { f: {}, z: {}, pts: { a: {}, w: {} }, done: {}, sc: { step: 0, tried: {}, first: {}, fin: false }, say: false };
+  try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) st = Object.assign(st, s); } catch (e) {}
+  function save() {
+    sheet.querySelectorAll('input').forEach((el) => {
+      if (!el.id) return;
+      st.f[el.id] = (el.type === 'checkbox' || el.type === 'radio') ? el.checked : el.value;
+    });
+    WORDS.forEach((w) => { st.z[w] = chips[w].parentElement.dataset.zone; });
+    try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {}
+  }
+
+  // ---------- Fälle-Tabelle ----------
+  const ft = $('faelle');
+  FAELLE.forEach((t, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${t}</td>
+      <td class="c"><input type="radio" name="f${i}" id="f${i}j" aria-label="ja"></td>
+      <td class="c"><input type="radio" name="f${i}" id="f${i}n" aria-label="nein"></td>
+      <td><input class="line" id="f${i}b" aria-label="Begründung"></td>`;
+    ft.appendChild(tr);
+  });
+
+  // ---------- Wortkärtchen (Aufgabe 5) ----------
+  const zones = { bank: $('bank'), z16: $('z16'), z18: $('z18') };
+  const chips = {};
+  WORDS.forEach((w) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = w; b.dataset.word = w;
+    chips[w] = b; zones.bank.appendChild(b);
+  });
+
+  // Gespeicherte Eingaben wiederherstellen
+  Object.entries(st.f).forEach(([id, v]) => {
+    const el = $(id); if (!el) return;
+    if (el.type === 'checkbox' || el.type === 'radio') el.checked = !!v; else el.value = v;
+  });
+  Object.entries(st.z).forEach(([w, z]) => { if (chips[w] && zones[z]) zones[z].appendChild(chips[w]); });
+
+  let sel = null, drag = null;
+  const zoneAt = (x, y) => { const el = document.elementFromPoint(x, y); return el && el.closest('[data-zone]'); };
+  function place(chip, zone) { zone.appendChild(chip); chip.classList.remove('ok', 'bad'); save(); }
+  const clearOver = () => Object.values(zones).forEach((z) => z.classList.remove('over'));
+  function setSel(c) { if (sel) sel.classList.remove('sel'); sel = c; if (sel) sel.classList.add('sel'); }
+  Object.values(chips).forEach((chip) => {
+    chip.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      const r = chip.getBoundingClientRect();
+      drag = { chip, sx: e.clientX, sy: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, ghost: null, moved: false };
+      chip.setPointerCapture(e.pointerId);
+    });
+    chip.addEventListener('pointermove', (e) => {
+      if (!drag || drag.chip !== chip) return;
+      if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6) return;
+      if (!drag.moved) { drag.moved = true; const g = chip.cloneNode(true); g.classList.add('ghost'); document.body.appendChild(g); drag.ghost = g; chip.classList.add('dragging'); }
+      drag.ghost.style.left = (e.clientX - drag.dx) + 'px'; drag.ghost.style.top = (e.clientY - drag.dy) + 'px';
+      clearOver(); const z = zoneAt(e.clientX, e.clientY); if (z) z.classList.add('over');
+    });
+    chip.addEventListener('pointerup', (e) => {
+      if (!drag || drag.chip !== chip) return;
+      if (drag.moved) { const z = zoneAt(e.clientX, e.clientY); if (z) place(chip, z); drag.ghost.remove(); chip.classList.remove('dragging'); clearOver(); setSel(null); }
+      else if (sel && sel !== chip) { place(sel, chip.parentElement); setSel(null); }
+      else setSel(sel === chip ? null : chip);
+      drag = null;
+    });
+    chip.addEventListener('pointercancel', () => { if (drag && drag.ghost) { drag.ghost.remove(); chip.classList.remove('dragging'); } clearOver(); drag = null; });
+    chip.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSel(sel === chip ? null : chip); } });
+  });
+  Object.values(zones).forEach((z) => {
+    z.addEventListener('click', (e) => { if (!sel || e.target.closest('.chip')) return; place(sel, z); const c = sel; setSel(null); c.focus(); });
+    z.addEventListener('keydown', (e) => { if (sel && (e.key === 'Enter' || e.key === ' ') && e.target === z) { e.preventDefault(); place(sel, z); setSel(null); } });
+  });
+
+  // ---------- Lösungsschlüssel ----------
+  const norm = (s) => s.toLowerCase().replace(/[.,;:!?„“"'()]/g, '').replace(/\s+/g, ' ').trim();
+  const NUM = { '2': ['zwei'], '13': ['dreizehn'], '14': ['vierzehn'], '15': ['fünfzehn', 'fuenfzehn'], '17': ['siebzehn'], '18': ['achtzehn'], '24': ['vierundzwanzig', '24 uhr', '24:00', '0', '00', '0 uhr', '00:00'] };
+  const n = (x) => [x, ...(NUM[x] || [])];
+  const T = (id, ...ok) => ({ t: 'text', id, ok: ok.flat() });
+  const R = (name, ok) => ({ t: 'radio', name, ok });
+  const PLACES = [['nachtclubs', 'nachtclub', 'nachtbars', 'nachtbar'], ['spielhallen', 'spielhalle', 'spielothek', 'spielotheken']];
+  const JOBS = [['babysitten', 'babysitting', 'babysitter', 'auf kinder aufpassen'], ['zeitungen austragen', 'zeitung austragen', 'zeitungen verteilen', 'zeitungen', 'zeitungsaustragen', 'prospekte austragen']];
+  const MIDNIGHT = ['mitternacht', '24 uhr', 'um mitternacht', '0 uhr', '24:00'];
+  const KEYS = {
+    1: [R('a1a', 'a1a2'), T('a1b1', 'mauer'), T('a1b2', 'leitplanke'), T('a1b3', 'rahmen')],
+    2: [T('a2a', n('14')), T('a2b', n('14')), T('a2c', n('17')), T('a2d', n('18'))],
+    3: [{ t: 'checks', key: 'a3a', map: { a3a1: false, a3a2: true } }, T('a3b1', MIDNIGHT), T('a3b2', n('24')),
+        T('a3c1', 'eltern', 'erziehungsberechtigten', 'erziehungsberechtigte'), T('a3c2', 'volljährige', 'volljaehrige', 'erwachsene', 'volljährigen'), T('a3c3', MIDNIGHT),
+        { t: 'pair', ids: ['a3d1', 'a3d2'], groups: PLACES }],
+    4: [T('a4a1', 'reiwillige', 'freiwillige'), T('a4a2', 'elbstkontrolle', 'selbstkontrolle'), T('a4a3', 'alter'),
+        R('a4b1', 'a4b1f'), R('a4b2', 'a4b2r'), R('a4b3', 'a4b3r'), R('a4b4', 'a4b4f')],
+    5: [{ t: 'drag', z16: ['Bier', 'Wein', 'Sekt'] }, T('a5b1', 'konsum', 'verbrauch', 'rauchen'), T('a5b2', n('18')), T('a5b3', 'keine', 'gar keine', 'absolut keine'), R('a5c', 'a5c2')],
+    6: [T('a6a', n('13')), T('a6b', 'eltern', 'erziehungsberechtigten'), { t: 'pair', ids: ['a6c', 'a6d'], groups: JOBS }, T('a6e', n('2')),
+        T('a6f', 'schulzeit', 'schule', 'unterrichtszeit', 'unterricht'), T('a6g', n('15')), T('a6h', 'schule', 'schulzeit')],
+    7: [R('f0', 'f0n'), R('f1', 'f1j'), R('f2', 'f2j'), R('f3', 'f3j'), R('f4', 'f4n'), R('f5', 'f5j'), R('f6', 'f6n')],
+  };
+  const FREE = new Set(['a2e', 'a2f']);
+  const itemCount = (r) => r.t === 'pair' ? r.ids.length : r.t === 'drag' ? WORDS.length : 1;
+
+  // ---------- Szenario ----------
+  const SC = [
+    { time: '18:30 Uhr', text: 'Im Club „Nachtwerk“ ist heute Party. Deine Freunde Emre (16) und Jana (17) gehen hin. Wie kannst du mitkommen?',
+      ch: [['Ich gehe einfach allein mit Emre und Jana mit.', 'Nein. Unter 16 darfst du nur mit deinen Eltern oder einer von ihnen beauftragten volljährigen Person in die Disco. Emre und Jana sind noch nicht 18.'],
+           ['Meine große Schwester Mia (19) kommt mit und hat einen „Muttizettel“ von unseren Eltern.', 'Richtig! Mit einer beauftragten volljährigen Person darfst du hinein.'],
+           ['Gar nicht. Unter 16 darf man nie in eine Disco.', 'Nicht ganz. Mit deinen Eltern oder einer beauftragten volljährigen Person darfst du hinein.']], ok: 1 },
+    { time: '19:00 Uhr', text: 'Mia kommt erst später nach. Ihr habt Hunger. Darfst du schon mal allein mit Emre und Jana ins Restaurant, um etwas zu essen?',
+      ch: [['Ja, kurz etwas essen oder trinken ist erlaubt.', 'Richtig! Für eine Mahlzeit oder ein Getränk darfst du auch unter 16 kurz allein ins Restaurant.'],
+           ['Nein, ohne Mia darf ich nicht ins Restaurant.', 'Doch. Kurz zum Essen oder Trinken ist auch unter 16 ohne Begleitung erlaubt.']], ok: 0 },
+    { time: '21:30 Uhr', text: 'In der Disco bietet dir Emre (16) ein Bier an: „Ich darf das, also darfst du auch.“',
+      ch: [['Ich trinke mit, Emre darf ja auch.', 'Nein. Bier gibt es erst ab 16, du bist aber erst 15.'],
+           ['Ich sage Nein und bestelle mir eine Cola.', 'Richtig! Bier, Wein und Sekt sind erst ab 16 erlaubt.']], ok: 1 },
+    { time: '22:15 Uhr', text: 'Ein Mann an der Bar will Jana (17) einen Wodka ausgeben. Was stimmt?',
+      ch: [['Das ist okay. Jana ist ja schon 17.', 'Nein. Schnaps und Wodka sind erst ab 18 erlaubt.'],
+           ['Er darf ihr keinen Wodka geben, auch nicht schenken.', 'Richtig! Hochprozentigen Alkohol darf niemand an unter 18-Jährige abgeben.']], ok: 1 },
+    { time: '22:40 Uhr', text: 'Draußen bietet dir jemand eine E-Zigarette an: „Ist ja keine richtige Zigarette.“',
+      ch: [['Stimmt, E-Zigaretten sind ab 16 erlaubt.', 'Nein. Auch E-Zigaretten und Shishas sind erst ab 18 erlaubt.'],
+           ['Nein danke. Auch E-Zigaretten sind erst ab 18.', 'Richtig! Für alle Arten von Zigaretten gilt: erst ab 18, ohne Ausnahme.']], ok: 1 },
+    { time: '23:50 Uhr', text: 'Emre (16) will bis 2 Uhr bleiben. Seine Eltern sind nicht da und haben niemanden beauftragt. Was gilt für ihn?',
+      ch: [['Er darf bis 2 Uhr bleiben, er ist ja schon 16.', 'Nein. Mit 16 ist um 24 Uhr Schluss, wenn keine Eltern oder beauftragte Person dabei sind.'],
+           ['Er muss um 24 Uhr gehen.', 'Richtig! Mit 16 und 17 darf man allein nur bis Mitternacht bleiben.']], ok: 1 },
+    { time: '0:10 Uhr', text: 'Auf dem Heimweg kommt ihr an einer Spielhalle vorbei. Jana (17) will kurz rein. Was stimmt?',
+      ch: [['Mit 17 ist das erlaubt.', 'Nein. Spielhallen sind für alle unter 18 tabu, egal mit wem.'],
+           ['Spielhallen sind erst ab 18, egal mit wem.', 'Richtig! Spielhallen und Nachtclubs sind für Minderjährige tabu.']], ok: 1 },
+  ];
+
+  // ---------- Punkte, Fortschritt, Urkunde ----------
+  const MAXPTS = Object.values(KEYS).flat().reduce((a, r) => a + itemCount(r), 0) + SC.length;
+  const PARTS = 8;
+  const points = () => Object.keys(st.pts.a).length;
+  function award(key, ok) {
+    if (ok) { if (!st.pts.w[key]) st.pts.a[key] = 1; }
+    else st.pts.w[key] = 1;
+  }
+  function updateTop() {
+    const d = Object.keys(st.done).length, p = points();
+    $('progLabel').textContent = `${d} von ${PARTS} Aufgaben geschafft`;
+    $('pts').textContent = `${p} von ${MAXPTS} Punkten`;
+    $('bar').style.width = (d / PARTS * 100) + '%';
+    const all = d >= PARTS;
+    $('cert').hidden = !all; $('certLock').hidden = all; $('certJump').hidden = !all;
+    const nm = $('name').value.trim();
+    $('certName').textContent = nm || '(Trag oben deinen Namen ein)';
+    const kl = $('klasse').value.trim();
+    $('certText').textContent = `${kl ? 'aus der Klasse ' + kl + ' ' : ''}für das erfolgreiche Bearbeiten des Arbeitsblatts zum Jugendschutzgesetz. Erreicht: ${p} von ${MAXPTS} Punkten.`;
+    const ratio = p / MAXPTS;
+    const s = ratio >= 0.9 ? 3 : ratio >= 0.7 ? 2 : 1;
+    $('certStars').textContent = '★'.repeat(s) + '☆'.repeat(3 - s);
+    $('certStars').setAttribute('aria-label', `${s} von 3 Sternen`);
+    $('certDate').textContent = $('datum').value.trim() || new Date().toLocaleDateString('de-DE');
+  }
+
+  // ---------- Überprüfen ----------
+  const mark = (el, ok) => { el.classList.remove('ok', 'bad'); el.classList.add(ok ? 'ok' : 'bad'); };
+  const unmark = (el) => el && el.classList.remove('ok', 'bad');
+  const holder = (inp) => inp.closest('.opt') || inp.closest('td') || inp;
+
+  function evaluate(rules) {
+    let right = 0, wrong = 0, total = 0;
+    const res = (key, ok) => { ok ? right++ : wrong++; award(key, ok); };
+    rules.forEach((r) => {
+      total += itemCount(r);
+      if (r.t === 'text') {
+        const el = $(r.id); const v = norm(el.value); unmark(el); if (!v) return;
+        const ok = r.ok.map(norm).includes(v); mark(el, ok); res(r.id, ok);
+      } else if (r.t === 'radio') {
+        const all = sheet.querySelectorAll(`input[name="${r.name}"]`); all.forEach((i) => unmark(holder(i)));
+        const c = [...all].find((i) => i.checked); if (!c) return;
+        const ok = c.id === r.ok; mark(holder(c), ok); res(r.name, ok);
+      } else if (r.t === 'checks') {
+        let anyWrong = false, anyChecked = false, allTrue = true;
+        Object.entries(r.map).forEach(([id, should]) => {
+          const el = $(id); unmark(holder(el));
+          if (el.checked) { anyChecked = true; mark(holder(el), should); if (!should) anyWrong = true; }
+          else if (should) allTrue = false;
+        });
+        if (!anyChecked) return;
+        if (anyWrong) res(r.key, false); else if (allTrue) res(r.key, true);
+      } else if (r.t === 'pair') {
+        const used = new Set();
+        r.ids.forEach((id) => {
+          const el = $(id); const v = norm(el.value); unmark(el); if (!v) return;
+          const g = r.groups.findIndex((gr) => gr.includes(v));
+          const ok = g >= 0 && !used.has(g); if (ok) used.add(g);
+          mark(el, ok); res(id, ok);
+        });
+      } else if (r.t === 'drag') {
+        WORDS.forEach((w) => {
+          const c = chips[w]; unmark(c);
+          const z = c.parentElement.dataset.zone; if (z === 'bank') return;
+          const ok = (z === 'z16') === r.z16.includes(w); mark(c, ok); res('chip:' + w, ok);
+        });
+      }
+    });
+    return { right, wrong, total };
+  }
+
+  // ---------- Tipps ----------
+  const TIPS = {
+    a1b1: 'Sie sperrt dich komplett ein. Fängt mit M an.',
+    a1b2: 'Steht am Rand der Autobahn und hält die Autos auf der Straße. Fängt mit L an.',
+    a1b3: 'Ein sicherer …, in dem du dich frei bewegen kannst. Fängt mit R an.',
+    a3b1: 'Der Moment, in dem ein neuer Tag beginnt.',
+    a3b2: 'Mitternacht als Uhrzeit.',
+    a3c1: 'Mama und Papa.',
+    a3c2: 'Die Person muss mindestens 18 Jahre alt sein.',
+    a3c3: 'Dieselbe Grenze wie in Aufgabe 3b.',
+    a3d1: 'Hat nur nachts offen, mit Musik und Alkohol. Fängt mit N an.',
+    a3d2: 'Dort stehen Automaten, an denen man um Geld spielt. Fängt mit S an.',
+    a4a1: 'Niemand zwingt sie dazu, sie machen es …',
+    a4a2: 'Sie kontrollieren sich selbst: S…',
+    a4a3: 'Danach wirst du gefragt, wenn du deinen Ausweis zeigst.',
+    a5b1: 'Das Rauchen selbst. Fängt mit K an.',
+    a5b3: 'Das Video sagt: „absolut … Ausnahmen“.',
+    a6b: 'Sie müssen es erlauben: Mama und Papa.',
+    a6c: 'Auf kleine Kinder aufpassen.',
+    a6d: 'Morgens Zeitungen in Briefkästen stecken.',
+    a6f: 'Die Zeit, in der du im Unterricht sitzt.',
+    a6h: 'Der Ort, an dem du gerade dieses Blatt bearbeitest.',
+  };
+  Object.entries(TIPS).forEach(([id, tip]) => {
+    const inp = $(id); if (!inp) return;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'tipbtn'; b.textContent = '?'; b.title = 'Tipp anzeigen'; b.setAttribute('aria-label', 'Tipp anzeigen');
+    const bub = document.createElement('span'); bub.className = 'bubble'; bub.hidden = true; bub.textContent = 'Tipp: ' + tip;
+    inp.after(b, bub);
+    b.addEventListener('click', () => { bub.hidden = !bub.hidden; b.setAttribute('aria-expanded', String(!bub.hidden)); });
+  });
+
+  // ---------- Wortspeicher ----------
+  const BANKS = {
+    1: ['Mauer', 'Leitplanke', 'Rahmen', 'Ampel', 'Zaun'],
+    2: ['13', '14', '16', '17', '18', '21'],
+    3: ['Mitternacht', '22', '24', 'Eltern', 'Lehrer', 'volljährige', 'minderjährige', 'Nachtclubs', 'Spielhallen', 'Kinos'],
+    4: ['reiwillige', 'ichtige', 'elbstkontrolle', 'Alter', 'Gewicht'],
+    5: ['Konsum', 'Verkauf', '16', '18', 'keine', 'viele'],
+    6: ['13', '15', '2', '4', 'Eltern', 'Freunde', 'Babysitten', 'Zeitungen austragen', 'Autofahren', 'Schulzeit', 'Schule', 'Ferien'],
+  };
+  let lastGap = null;
+  sheet.addEventListener('focusin', (e) => { if (e.target.matches('input.gap') && !FREE.has(e.target.id)) lastGap = e.target; });
+
+  // ---------- Abschnitte ausstatten ----------
+  sheet.querySelectorAll('section[data-part]').forEach((sec) => {
+    const part = +sec.dataset.part;
+    const h2 = sec.querySelector('h2');
+    if (BANKS[part]) {
+      const row = document.createElement('div'); row.className = 'toolrow';
+      row.innerHTML = '<button type="button" class="wbtn" aria-expanded="false">Wortspeicher zeigen</button>';
+      const box = document.createElement('div'); box.className = 'wbank'; box.hidden = true;
+      box.innerHTML = '<span class="wlabel">Tippe auf ein Wort. Es kommt in die Lücke, in der du zuletzt warst. Nicht alle Wörter passen.</span>' +
+        BANKS[part].map((w) => `<button type="button" class="word">${w}</button>`).join('');
+      h2.after(row, box);
+      const tb = row.querySelector('.wbtn');
+      tb.addEventListener('click', () => { box.hidden = !box.hidden; tb.setAttribute('aria-expanded', String(!box.hidden)); tb.textContent = box.hidden ? 'Wortspeicher zeigen' : 'Wortspeicher ausblenden'; });
+      box.addEventListener('click', (e) => {
+        const w = e.target.closest('.word'); if (!w) return;
+        const gaps = [...sec.querySelectorAll('input.gap')].filter((g) => !FREE.has(g.id));
+        let target = lastGap && sec.contains(lastGap) ? lastGap : gaps.find((g) => !g.value.trim());
+        if (!target) return;
+        target.value = w.textContent; target.dispatchEvent(new Event('input', { bubbles: true }));
+        const next = gaps.slice(gaps.indexOf(target) + 1).find((g) => !g.value.trim());
+        lastGap = next || null; if (next) next.focus({ preventScroll: true });
+      });
+    }
+    if (KEYS[part]) {
+      const row = document.createElement('div'); row.className = 'checkrow';
+      row.innerHTML = `<button type="button" class="check">Aufgabe ${part} überprüfen</button><span class="result" aria-live="polite"></span>`;
+      sec.appendChild(row);
+      const out = row.querySelector('.result');
+      row.querySelector('.check').addEventListener('click', () => {
+        const { right, wrong, total } = evaluate(KEYS[part]);
+        out.className = 'result';
+        if (!right && !wrong) out.textContent = 'Du hast hier noch nichts ausgefüllt, das man überprüfen kann.';
+        else if (!wrong && right === total) { out.classList.add('allok'); out.textContent = `Alles richtig! Aufgabe ${part} ist geschafft.`; st.done[part] = 1; }
+        else if (!wrong) { out.classList.add('allok'); out.textContent = `${right} von ${total} richtig. Füll noch den Rest aus.`; }
+        else { out.classList.add('some'); out.textContent = `${right} von ${total} richtig. Schau dir die roten Stellen noch einmal an.`; }
+        save(); updateTop(); addSay(row);
+      });
+    }
+  });
+
+  sheet.addEventListener('input', (e) => {
+    const t = e.target;
+    if (t.type === 'radio') sheet.querySelectorAll(`input[name="${t.name}"]`).forEach((i) => unmark(holder(i)));
+    else unmark(holder(t));
+    save(); if (['name', 'klasse', 'datum'].includes(t.id)) updateTop();
+  });
+  sheet.addEventListener('change', save);
+
+  // ---------- Alters-Regler ----------
+  function ageRules(a) {
+    const L = [];
+    const add = (s, t, d) => L.push({ s, t, d });
+    const stage = a < 14 ? 'ein Kind' : a < 18 ? 'Jugendliche oder Jugendlicher' : 'volljährig, also erwachsen';
+    if (a < 16) {
+      add('lim', 'Disco und Party', 'Nur mit deinen Eltern oder einer von ihnen beauftragten volljährigen Person.');
+      add('lim', 'Restaurant', 'Allein nur kurz zum Essen oder Trinken. Sonst nur mit Begleitung.');
+    } else if (a < 18) {
+      add('lim', 'Disco und Party', 'Allein bis 24 Uhr. Mit Eltern oder beauftragter volljähriger Person auch länger.');
+      add('lim', 'Restaurant', 'Allein bis 24 Uhr.');
+    } else {
+      add('ok', 'Disco und Party', 'Keine Zeitgrenze mehr.'); add('ok', 'Restaurant', 'Keine Zeitgrenze mehr.');
+    }
+    const fsk = [0, 6, 12, 16, 18].filter((x) => x <= a).pop();
+    add(a >= 18 ? 'ok' : 'lim', 'Filme und Spiele', `Nur mit passender Altersfreigabe, für dich bis „ab ${fsk}“.`);
+    if (a < 18) add('lim', 'Kino allein', `Bis ${a < 14 ? 20 : a < 16 ? 22 : 24} Uhr, bei passender Altersfreigabe.`);
+    add(a >= 16 ? 'ok' : 'no', 'Bier, Wein, Sekt', a >= 16 ? 'Erlaubt.' : 'Erst ab 16 erlaubt.');
+    add(a >= 18 ? 'ok' : 'no', 'Schnaps, Wodka und Co.', a >= 18 ? 'Erlaubt.' : 'Erst ab 18 erlaubt.');
+    add(a >= 18 ? 'ok' : 'no', 'Zigaretten, E-Zigaretten, Shisha', a >= 18 ? 'Erlaubt.' : 'Kaufen und rauchen erst ab 18, ohne Ausnahme.');
+    add(a >= 18 ? 'ok' : 'no', 'Spielhalle und Nachtclub', a >= 18 ? 'Erlaubt.' : 'Tabu, egal mit wem.');
+    if (a < 13) add('no', 'Eigener Job', 'Noch nicht. Ab 13 sind leichte Jobs möglich.');
+    else if (a < 15) add('lim', 'Eigener Job', 'Leichte Jobs mit Erlaubnis der Eltern, z. B. Babysitten. Höchstens 2 Stunden am Tag, nicht während der Schulzeit.');
+    else if (a < 18) add('lim', 'Eigener Job', 'Leichte Jobs und Ferienjobs. Die Schule darf nicht zu kurz kommen.');
+    else add('ok', 'Eigener Job', 'Du darfst arbeiten wie Erwachsene.');
+    return { stage, L };
+  }
+  const ICON = { ok: '✓', no: '✗', lim: '!' };
+  const LABEL = { ok: 'erlaubt', no: 'nicht erlaubt', lim: 'mit Einschränkung' };
+  function renderAge() {
+    const a = +$('age').value;
+    $('ageOut').textContent = a + (a >= 18 ? '+ Jahre' : ' Jahre');
+    const { stage, L } = ageRules(a);
+    $('ageHead').textContent = `Mit ${a} bist du laut Gesetz ${stage}.`;
+    $('ageList').innerHTML = L.map((x) => `<li class="${x.s}"><span class="st" aria-label="${LABEL[x.s]}">${ICON[x.s]}</span><span><b>${x.t}</b>${x.d}</span></li>`).join('');
+    addSay($('ageSec'));
+  }
+  $('age').addEventListener('input', renderAge);
+
+  // ---------- Szenario darstellen ----------
+  function renderScene() {
+    const box = $('story'); const sc = st.sc;
+    const dots = SC.map((_, i) => `<span class="${i < sc.step || sc.fin ? 'done' : i === sc.step ? 'cur' : ''}"></span>`).join('');
+    if (sc.fin) {
+      const f = Object.keys(sc.first).length;
+      box.innerHTML = `<div class="steps">${dots}</div><p class="scene-text"><b>Geschafft, du bist sicher zu Hause!</b> Du hast ${f} von ${SC.length} Entscheidungen gleich beim ersten Mal richtig getroffen.</p>
+        <button type="button" class="reset" id="scAgain">Noch einmal spielen</button>`;
+      $('scAgain').addEventListener('click', () => { st.sc.step = 0; st.sc.tried = {}; st.sc.fin = false; save(); renderScene(); });
+      addSay(box); return;
+    }
+    const s = SC[sc.step]; const tried = sc.tried[sc.step] || [];
+    const solved = tried.includes(s.ok);
+    box.innerHTML = `<div class="steps">${dots}</div><div class="clock">Station ${sc.step + 1} von ${SC.length} · ${s.time}</div>
+      <p class="scene-text">${s.text}</p>
+      <div class="choices">${s.ch.map((c, i) => {
+        const cls = tried.includes(i) ? (i === s.ok ? 'right' : 'wrong') : '';
+        return `<button type="button" class="choice ${cls}" data-i="${i}" ${tried.includes(i) || solved ? 'disabled' : ''}>${c[0]}</button>`;
+      }).join('')}</div>
+      <div id="fb"></div>`;
+    const last = tried[tried.length - 1];
+    if (last !== undefined) {
+      const good = last === s.ok;
+      $('fb').innerHTML = `<div class="feedback ${good ? 'good' : 'badfb'}">${good ? 'Gut entschieden!' : 'Leider falsch.'} <span class="fbt">${s.ch[last][1]}</span></div>` +
+        (good ? `<button type="button" class="check next" id="scNext">${sc.step + 1 < SC.length ? 'Weiter zur nächsten Station' : 'Zum Ende'}</button>` : '<p class="hint" style="margin-top:8px">Probier eine andere Antwort.</p>');
+      if (good) $('scNext').addEventListener('click', () => {
+        if (sc.step + 1 < SC.length) sc.step++; else { sc.fin = true; st.done[8] = 1; }
+        save(); updateTop(); renderScene();
+      });
+    }
+    box.querySelectorAll('.choice').forEach((b) => b.addEventListener('click', (e) => {
+      if (e.target.closest('.say')) return;
+      const i = +b.dataset.i; (sc.tried[sc.step] = sc.tried[sc.step] || []).push(i);
+      const firstTry = sc.tried[sc.step].length === 1;
+      award('sc' + sc.step, i === s.ok && firstTry);
+      if (i === s.ok && firstTry) sc.first[sc.step] = 1;
+      save(); updateTop(); renderScene();
+    }));
+    addSay(box);
+  }
+
+  // ---------- Vorlesen ----------
+  const SPK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  const synth = window.speechSynthesis;
+  let voice = null, speakingBtn = null;
+  function pickVoice() { if (!synth) return; const v = synth.getVoices(); voice = v.find((x) => /^de/i.test(x.lang) && /google|anna|petra|helena|katja/i.test(x.name)) || v.find((x) => /^de/i.test(x.lang)) || null; }
+  if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
+  function textOf(el) {
+    const c = el.cloneNode(true);
+    c.querySelectorAll('.say, .tipbtn, .bubble, .qr, svg').forEach((x) => x.remove());
+    c.querySelectorAll('input').forEach((i) => {
+      if (i.type === 'radio' || i.type === 'checkbox' || i.type === 'range') { i.remove(); return; }
+      const lab = document.createTextNode(i.value ? ` ${i.value} ` : ' Lücke ');
+      i.replaceWith(lab);
+    });
+    c.querySelectorAll('td, th').forEach((td) => td.append('. '));
+    return c.textContent.replace(/[▶✓✗]/g, '').replace(/\s+/g, ' ').trim();
+  }
+  function speak(el, btn) {
+    if (!synth) return;
+    const was = speakingBtn === btn;
+    synth.cancel(); if (speakingBtn) speakingBtn.classList.remove('speaking'); speakingBtn = null;
+    if (was) return;
+    const u = new SpeechSynthesisUtterance(textOf(el));
+    u.lang = 'de-DE'; u.rate = 0.92; if (voice) u.voice = voice;
+    u.onend = u.onerror = () => { btn.classList.remove('speaking'); if (speakingBtn === btn) speakingBtn = null; };
+    speakingBtn = btn; btn.classList.add('speaking'); synth.speak(u);
+  }
+  const SAY_SEL = '.brief, .video > div:first-child, h2, .task, .hint, .opt, p.fill, .tbl tr, .drop h3, .scene-text, .choice, .feedback, .agelist li, .age-head, .result, .wlabel, #certLock, .cert';
+  function addSay(root) {
+    if (!synth) return;
+    const targets = root.matches && root.matches(SAY_SEL) ? [root] : [];
+    targets.push(...root.querySelectorAll(SAY_SEL));
+    targets.forEach((el) => {
+      if (el.matches('.tbl tr') && el.querySelector('th')) return;
+      const host = el.matches('tr') ? el.querySelector('td') : el;
+      if (!host || host.querySelector(':scope > .say') || !textOf(el)) return;
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'say'; b.innerHTML = SPK; b.title = 'Vorlesen'; b.setAttribute('aria-label', 'Vorlesen');
+      b.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); speak(el, b); });
+      host.prepend(b);
+    });
+  }
+  const sayToggle = $('sayToggle');
+  function setSayMode(on) {
+    st.say = on; document.body.classList.toggle('say-on', on); sayToggle.setAttribute('aria-pressed', String(on));
+    sayToggle.title = on ? 'Vorlese-Knöpfe ausblenden' : 'Vorlese-Knöpfe einblenden';
+    if (!on && synth) { synth.cancel(); if (speakingBtn) speakingBtn.classList.remove('speaking'); speakingBtn = null; }
+    try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {}
+  }
+  if (!synth) { sayToggle.disabled = true; sayToggle.title = 'Vorlesen wird in diesem Browser nicht unterstützt'; }
+  sayToggle.addEventListener('click', () => setSayMode(!st.say));
+  $('certJump').addEventListener('click', () => $('cert').scrollIntoView({ behavior: 'smooth', block: 'center' }));
+
+  // ---------- PDF ----------
+  let downloads = null;
+  if (window.claude && window.claude.use) window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
+  $('pdfBtn').addEventListener('click', async () => {
+    const btn = $('pdfBtn'), msg = $('pdfStatus');
+    if (!window.html2canvas || !window.jspdf) { msg.textContent = 'Das PDF kann gerade nicht erstellt werden. Lade die Seite neu und versuche es noch einmal.'; return; }
+    if (!downloads) { msg.textContent = 'Speichern ist in dieser Ansicht nicht möglich. Öffne das Arbeitsblatt direkt im Browser.'; return; }
+    btn.disabled = true; msg.textContent = 'PDF wird erstellt …';
+    try {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ unit: 'mm', format: 'a4' });
+      const PW = 210, PH = 297, M = 10, W = PW - 2 * M;
+      let y = M;
+      const blocks = [...sheet.children].filter((el) => !el.hidden && !el.matches('.bar, .pdfbox, .topbar') && el.offsetHeight > 0);
+      for (const el of blocks) {
+        const canvas = await window.html2canvas(el, {
+          scale: 2, backgroundColor: '#ffffff', useCORS: true,
+          onclone: (doc) => { doc.documentElement.classList.add('pdf-mode'); doc.documentElement.setAttribute('data-theme', 'light'); },
+        });
+        const h = canvas.height * W / canvas.width;
+        if (h <= PH - 2 * M) {
+          if (y + h > PH - M) { pdf.addPage(); y = M; }
+          pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', M, y, W, h); y += h + 4;
+        } else {
+          // sehr lange Abschnitte in Stücke teilen
+          const sliceH = Math.floor(canvas.width * (PH - 2 * M) / W);
+          for (let sy = 0; sy < canvas.height; sy += sliceH) {
+            const part = document.createElement('canvas'); part.width = canvas.width; part.height = Math.min(sliceH, canvas.height - sy);
+            part.getContext('2d').drawImage(canvas, 0, sy, canvas.width, part.height, 0, 0, canvas.width, part.height);
+            if (y > M) { pdf.addPage(); y = M; }
+            const ph = part.height * W / canvas.width;
+            pdf.addImage(part.toDataURL('image/jpeg', 0.92), 'JPEG', M, y, W, ph); y += ph + 4;
+          }
+        }
+      }
+      const nm = ($('name').value.trim() || 'Schueler').replace(/[^\wäöüÄÖÜß-]+/g, '_');
+      await downloads.save({ filename: `Jugendschutzgesetz_${nm}.pdf`, data: pdf.output('blob') });
+      msg.textContent = 'Das PDF wurde gespeichert.';
+    } catch (e) {
+      msg.textContent = e && e.code === 'declined' ? 'Speichern abgebrochen.' : 'Das PDF konnte nicht gespeichert werden. Versuche es noch einmal.';
+    }
+    btn.disabled = false;
+  });
+
+  // ---------- Zurücksetzen ----------
+  const rbtn = $('reset'); let armed = null;
+  rbtn.addEventListener('click', () => {
+    if (!armed) {
+      rbtn.textContent = 'Wirklich alles löschen?'; rbtn.classList.add('warn');
+      armed = setTimeout(() => { rbtn.textContent = 'Alles löschen'; rbtn.classList.remove('warn'); armed = null; }, 4000);
+      return;
+    }
+    clearTimeout(armed); armed = null;
+    sheet.querySelectorAll('input').forEach((el) => {
+      if (el.type === 'checkbox' || el.type === 'radio') el.checked = false;
+      else if (el.type === 'range') el.value = 13;
+      else el.value = el.id === 'klasse' ? '7' : '';
+    });
+    WORDS.forEach((w) => zones.bank.appendChild(chips[w]));
+    sheet.querySelectorAll('.ok, .bad').forEach(unmark);
+    sheet.querySelectorAll('.result').forEach((r) => { r.textContent = ''; });
+    sheet.querySelectorAll('.bubble').forEach((b) => { b.hidden = true; });
+    st = { f: {}, z: {}, pts: { a: {}, w: {} }, done: {}, sc: { step: 0, tried: {}, first: {}, fin: false }, say: st.say };
+    rbtn.textContent = 'Alles löschen'; rbtn.classList.remove('warn');
+    save(); updateTop(); renderAge(); renderScene();
+    $('status').textContent = 'Alles gelöscht.';
+  });
+
+  // ---------- Start ----------
+  renderAge(); renderScene(); addSay(sheet); setSayMode(!!st.say); updateTop();
+})();
+</script>
+
+</body></html>
