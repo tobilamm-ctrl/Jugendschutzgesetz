@@ -182,7 +182,14 @@ h2 .say { margin-top: 2px; }
 .lockinfo { margin-top: 40px; text-align: center; border: 2px dashed var(--line); border-radius: 8px; padding: 20px; color: var(--muted); }
 
 /* ---------- PDF ---------- */
-.pdfbox { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px; border-radius: 8px; background: var(--field); }
+.pdfbox { margin-top: 30px; display: grid; gap: 12px; padding: 16px; border-radius: 8px; background: var(--field); border: 2px solid var(--accent); }
+.pdfrow { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.pdflink { color: var(--accent); font-weight: 700; }
+@media print {
+  .topbar, .say, .tipbtn, .toolrow, .wbank, .checkrow button, .bar, .pdfbox, .tip, .bubble, .next, #scAgain { display: none !important; }
+  body { background: #fff !important; } .wrap { max-width: none; padding: 0; } .sheet { box-shadow: none; padding: 0; }
+  section, .cert, tr, .opt, .agelist li { break-inside: avoid; }
+}
 button.pdf { font: inherit; font-weight: 700; background: var(--accent); color: var(--paper); border: none; border-radius: 4px; padding: 10px 18px; cursor: pointer; }
 button.pdf:disabled { opacity: .6; cursor: progress; }
 html.pdf-mode .topbar, html.pdf-mode .say, html.pdf-mode .tipbtn, html.pdf-mode .toolrow, html.pdf-mode .wbank, html.pdf-mode .checkrow button, html.pdf-mode .bar, html.pdf-mode .pdfbox, html.pdf-mode .tip, html.pdf-mode .bubble, html.pdf-mode .next, html.pdf-mode #scAgain { display: none !important; }
@@ -337,9 +344,15 @@ html.pdf-mode .topbar, html.pdf-mode .say, html.pdf-mode .tipbtn, html.pdf-mode 
     </div>
   </div>
 
-  <div class="pdfbox">
-    <button type="button" class="pdf" id="pdfBtn">Als PDF speichern</button>
-    <span class="hint" id="pdfStatus" style="margin:0">Speichert die ausgefüllte Seite mit deinen Antworten und, wenn freigeschaltet, deiner Urkunde.</span>
+  <div class="pdfbox" id="pdfbox">
+    <div class="pdfhead"><b>Ergebnisse sichern</b><br><span class="hint" style="margin:0">Deine Antworten sind nur auf diesem Gerät gespeichert. Wenn du die Seite teilst, wird nur der Link geteilt, ohne deine Antworten. Sichere deine Ergebnisse deshalb als PDF.</span></div>
+    <div class="pdfrow">
+      <button type="button" class="pdf" id="pdfBtn">1. PDF erstellen</button>
+      <button type="button" class="pdf" id="shareBtn" hidden>2. PDF teilen oder sichern</button>
+      <a class="pdflink" id="pdfLink" hidden target="_blank" rel="noopener">PDF öffnen</a>
+      <button type="button" class="reset" id="printBtn" hidden>Seite drucken oder als PDF sichern</button>
+    </div>
+    <p class="hint" id="pdfStatus" style="margin:0" aria-live="polite"></p>
   </div>
 
   <div class="bar">
@@ -787,47 +800,89 @@ html.pdf-mode .topbar, html.pdf-mode .say, html.pdf-mode .tipbtn, html.pdf-mode 
   $('certJump').addEventListener('click', () => $('cert').scrollIntoView({ behavior: 'smooth', block: 'center' }));
 
   // ---------- PDF ----------
+  // Weg 1: im Claude-Viewer über die Speichern-Funktion der Plattform.
+  // Weg 2: direkt im Browser (z. B. Safari auf dem iPad) über das Teilen-Menü, einen PDF-Link oder Drucken.
   let downloads = null;
+  const framed = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
   if (window.claude && window.claude.use) window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
-  $('pdfBtn').addEventListener('click', async () => {
-    const btn = $('pdfBtn'), msg = $('pdfStatus');
-    if (!window.html2canvas || !window.jspdf) { msg.textContent = 'Das PDF kann gerade nicht erstellt werden. Lade die Seite neu und versuche es noch einmal.'; return; }
-    if (!downloads) { msg.textContent = 'Speichern ist in dieser Ansicht nicht möglich. Öffne das Arbeitsblatt direkt im Browser.'; return; }
-    btn.disabled = true; msg.textContent = 'PDF wird erstellt …';
-    try {
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF({ unit: 'mm', format: 'a4' });
-      const PW = 210, PH = 297, M = 10, W = PW - 2 * M;
-      let y = M;
-      const blocks = [...sheet.children].filter((el) => !el.hidden && !el.matches('.bar, .pdfbox, .topbar') && el.offsetHeight > 0);
-      for (const el of blocks) {
-        const canvas = await window.html2canvas(el, {
-          scale: 2, backgroundColor: '#ffffff', useCORS: true,
-          onclone: (doc) => { doc.documentElement.classList.add('pdf-mode'); doc.documentElement.setAttribute('data-theme', 'light'); },
-        });
-        const h = canvas.height * W / canvas.width;
-        if (h <= PH - 2 * M) {
-          if (y + h > PH - M) { pdf.addPage(); y = M; }
-          pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', M, y, W, h); y += h + 4;
-        } else {
-          // sehr lange Abschnitte in Stücke teilen
-          const sliceH = Math.floor(canvas.width * (PH - 2 * M) / W);
-          for (let sy = 0; sy < canvas.height; sy += sliceH) {
-            const part = document.createElement('canvas'); part.width = canvas.width; part.height = Math.min(sliceH, canvas.height - sy);
-            part.getContext('2d').drawImage(canvas, 0, sy, canvas.width, part.height, 0, 0, canvas.width, part.height);
-            if (y > M) { pdf.addPage(); y = M; }
-            const ph = part.height * W / canvas.width;
-            pdf.addImage(part.toDataURL('image/jpeg', 0.92), 'JPEG', M, y, W, ph); y += ph + 4;
-          }
+  if (!framed) $('printBtn').hidden = false;
+  $('printBtn').addEventListener('click', () => { try { window.print(); } catch (e) {} });
+  let pdfFile = null, pdfUrl = null;
+
+  async function buildPdf() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'mm', format: 'a4' });
+    const PW = 210, PH = 297, M = 10, W = PW - 2 * M;
+    const scale = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && 'ontouchend' in document ? 1.4 : 2;
+    let y = M;
+    const blocks = [...sheet.children].filter((el) => !el.hidden && !el.matches('.bar, .pdfbox, .topbar') && el.offsetHeight > 0);
+    for (const el of blocks) {
+      const canvas = await window.html2canvas(el, {
+        scale, backgroundColor: '#ffffff', useCORS: true, logging: false,
+        onclone: (doc) => { doc.documentElement.classList.add('pdf-mode'); doc.documentElement.setAttribute('data-theme', 'light'); },
+      });
+      const h = canvas.height * W / canvas.width;
+      if (h <= PH - 2 * M) {
+        if (y + h > PH - M) { pdf.addPage(); y = M; }
+        pdf.addImage(canvas.toDataURL('image/jpeg', 0.9), 'JPEG', M, y, W, h); y += h + 4;
+      } else {
+        const sliceH = Math.floor(canvas.width * (PH - 2 * M) / W);
+        for (let sy = 0; sy < canvas.height; sy += sliceH) {
+          const part = document.createElement('canvas'); part.width = canvas.width; part.height = Math.min(sliceH, canvas.height - sy);
+          part.getContext('2d').drawImage(canvas, 0, sy, canvas.width, part.height, 0, 0, canvas.width, part.height);
+          if (y > M) { pdf.addPage(); y = M; }
+          const ph = part.height * W / canvas.width;
+          pdf.addImage(part.toDataURL('image/jpeg', 0.9), 'JPEG', M, y, W, ph); y += ph + 4;
         }
       }
+    }
+    return pdf.output('blob');
+  }
+
+  $('pdfBtn').addEventListener('click', async () => {
+    const btn = $('pdfBtn'), msg = $('pdfStatus');
+    $('shareBtn').hidden = true; $('pdfLink').hidden = true;
+    if (!window.html2canvas || !window.jspdf) { msg.textContent = 'Das PDF kann gerade nicht erstellt werden. Lade die Seite neu und versuche es noch einmal.'; return; }
+    btn.disabled = true; msg.textContent = 'PDF wird erstellt … das kann ein paar Sekunden dauern.';
+    try {
+      const blob = await buildPdf();
       const nm = ($('name').value.trim() || 'Schueler').replace(/[^\wäöüÄÖÜß-]+/g, '_');
-      await downloads.save({ filename: `Jugendschutzgesetz_${nm}.pdf`, data: pdf.output('blob') });
-      msg.textContent = 'Das PDF wurde gespeichert.';
+      const filename = `Jugendschutzgesetz_${nm}.pdf`;
+      pdfFile = new File([blob], filename, { type: 'application/pdf' });
+      if (pdfUrl) URL.revokeObjectURL(pdfUrl);
+      pdfUrl = URL.createObjectURL(blob);
+      if (downloads) {
+        try {
+          await downloads.save({ filename, data: blob });
+          msg.textContent = 'Das PDF wurde gespeichert.';
+          btn.disabled = false; return;
+        } catch (e) {
+          if (e && e.code === 'declined') { msg.textContent = 'Speichern abgebrochen.'; btn.disabled = false; return; }
+        }
+      }
+      // Kein Speichern über die Plattform möglich: Teilen-Menü und PDF-Link anbieten
+      const canShare = !!(navigator.canShare && navigator.canShare({ files: [pdfFile] }));
+      $('shareBtn').hidden = !canShare;
+      const a = $('pdfLink'); a.href = pdfUrl; a.download = filename; a.hidden = false;
+      msg.textContent = canShare
+        ? 'Fertig! Tippe jetzt auf „2. PDF teilen oder sichern“. Dann kannst du es z. B. in „Dateien“ sichern oder an OneNote schicken.'
+        : 'Fertig! Tippe auf „PDF öffnen“ und sichere das PDF dort über Teilen oder Herunterladen.';
     } catch (e) {
-      msg.textContent = e && e.code === 'declined' ? 'Speichern abgebrochen.' : 'Das PDF konnte nicht gespeichert werden. Versuche es noch einmal.';
+      msg.textContent = 'Das PDF konnte nicht erstellt werden.' + (framed ? '' : ' Nutze stattdessen „Seite drucken oder als PDF sichern“.');
     }
     btn.disabled = false;
+  });
+
+  $('shareBtn').addEventListener('click', async () => {
+    const msg = $('pdfStatus');
+    if (!pdfFile) return;
+    try {
+      await navigator.share({ files: [pdfFile], title: 'Arbeitsblatt Jugendschutzgesetz' });
+      msg.textContent = 'Erledigt.';
+    } catch (e) {
+      if (e && e.name === 'AbortError') msg.textContent = 'Teilen abgebrochen.';
+      else msg.textContent = 'Teilen hat nicht geklappt. Tippe auf „PDF öffnen“ und sichere das PDF dort.';
+    }
   });
 
   // ---------- Zurücksetzen ----------
